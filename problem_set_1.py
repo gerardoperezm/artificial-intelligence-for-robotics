@@ -43,51 +43,7 @@
 #  [1,0] - down
 #  [-1,0] - up
 
-# def sense(p, Z):
-#     q=[]
-#     for i in range(len(p)):
-#         hit = (Z == world[i]) 
-#         q.append(p[i] * (hit * pHit + (1-hit) * pMiss))
-#     s = sum(q)
-#     for i in range(len(q)):
-#         q[i] = q[i] / s
-#     return q
-
-# def move(p, U):
-#     q = []
-#     for i in range(len(p)):
-#         s = pExact * p[(i-U) % len(p)]
-#         s = s + pOvershoot * p[(i-U-1) % len(p)]
-#         s = s + pUndershoot * p[(i-U+1) % len(p)]
-#         q.append(s)
-#     return q
-
 def move(p, U, p_move):
-    # pExact = p_move
-    # pOvershoot = (1 - p_move) / 4
-    # pUndershoot = (1 - p_move) / 4
-    # q = [[0 for j in p[0]] for i in p]
-    # colores = [['' for j in p[0]] for i in p]
-    # for i in range(len(q)):
-    #     for j in range(len(q[0])):
-    #         row = (i - U[0]) % len(p)
-    #         col = (j - U[1]) % len(p[0])
-    #         # Over and undershoot row
-    #         prev_row = (i - U[0] - 1) % len(p)
-    #         next_row = (i - U[0] + 1) % len(p)
-            
-    #         # Over and undershoot col
-    #         prev_col = (j - U[1] - 1) % len(p[0])
-    #         next_col = (j - U[1] + 1) % len(p[0])
-
-    #         s = pExact * p[row][col]
-    #         s += pUndershoot * p[prev_row][col]
-    #         s += pOvershoot * p[next_row][col]
-    #         s += pUndershoot * p[row][prev_col]
-    #         s += pOvershoot * p[row][next_col]
-    #         q[i][j] = s
-
-    # return q
     q = [[0 for j in p[0]] for i in p]
 
     for i in range(len(q)):
